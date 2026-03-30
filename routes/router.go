@@ -15,7 +15,7 @@ func SetupRouter(
 	productHandler *handlers.ProductHandler,
 ) *mux.Router {
 	r := mux.NewRouter()
-
+    r.HandleFunc("/",userHandler.Welcome).Methods("GET")
 	//public routes
 	r.HandleFunc("/login", userHandler.Login).Methods("POST")
 	r.HandleFunc("/register", userHandler.RegisterUser).Methods("POST")

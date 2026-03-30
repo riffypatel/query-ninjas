@@ -42,7 +42,10 @@ func (h *UserHandler) RegisterUser(w http.ResponseWriter, r *http.Request) {
 		UpdatedAt: signUp.UpdatedAt,
 	})
 }
-
+func (h *UserHandler) Welcome(w http.ResponseWriter, r *http.Request) {
+w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode("Welcome to Query Ninjas")
+}	
 func (h *UserHandler) Login(w http.ResponseWriter, r *http.Request) {
 	// get login data from request body
 	var login models.User
