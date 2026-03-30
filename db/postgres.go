@@ -20,7 +20,7 @@ func InitDb() {
 	fmt.Println("DB_NAME:", os.Getenv("DB_NAME"))
 	fmt.Println("DB_PORT:", os.Getenv("DB_PORT"))
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Println("Error loading .env file")
 	}
 
 connStr := fmt.Sprintf(
